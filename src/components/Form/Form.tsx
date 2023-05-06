@@ -23,7 +23,6 @@ const Form = () => {
   const floorSelectValue = useAppSelector(state => state.formData.floor)
   const roomSelectValue = useAppSelector(state => state.formData.room)
 
-
   return (
     <Group>
       <FormLayout>

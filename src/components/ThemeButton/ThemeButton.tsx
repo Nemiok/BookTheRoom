@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Div } from '@vkontakte/vkui'
+import { Div } from '@vkontakte/vkui'
 import { Icon28MoonOutline } from '@vkontakte/icons';
 import { Icon28SunOutline } from '@vkontakte/icons';
 import './ThemeButton.css'

@@ -6,9 +6,7 @@ import {
   View,
   Panel,
   PanelHeader,
-  Button,
   AppearanceProvider,
-  ButtonGroup,
   Div,
 } from '@vkontakte/vkui';
 import { Icon28Clock } from '@vkontakte/icons';
