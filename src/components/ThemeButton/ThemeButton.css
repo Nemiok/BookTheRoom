@@ -1,0 +1,12 @@
+.main__themeButton {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color .1s ease-in-out;
+}
+
+.main__themeButton:hover {
+  background-color: rgba(200, 200, 200, 0.3);
+
+}
