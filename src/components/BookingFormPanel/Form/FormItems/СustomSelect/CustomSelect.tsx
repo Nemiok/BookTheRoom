@@ -3,9 +3,9 @@ import {
   FormItem,
   Select,
 } from '@vkontakte/vkui';
-import { useAppDispatch } from '../../../../redux-store/hooks';
-import formStateNames from '../../../../utils/nameObjects/formState';
-import { setFloor, setRoom, setTower } from '../../../../redux-store/reducers/formStateReducer';
+import { useAppDispatch } from '../../../../../redux-store/hooks';
+import formStateNames from '../../../../../utils/nameObjects/formState';
+import { setFloor, setRoom, setTower } from '../../../../../redux-store/reducers/formStateReducer';
 
 interface ICustomSelectProps {
   labelTop: string,

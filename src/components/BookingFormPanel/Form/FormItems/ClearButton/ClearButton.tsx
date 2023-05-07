@@ -1,6 +1,6 @@
-import { useAppDispatch } from '../../../../redux-store/hooks'
-import { clearForm } from '../../../../redux-store/reducers/formStateReducer'
 import { Button } from '@vkontakte/vkui'
+import { clearForm } from '../../../../../redux-store/reducers/formStateReducer'
+import { useAppDispatch } from '../../../../../redux-store/hooks'
 
 // кнопка, которая обнуляет состояние формы
 const ClearButton = () => {

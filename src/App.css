@@ -1,0 +1,9 @@
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.header-wrapper__title {
+  padding-left: 0;
+}

@@ -1,10 +1,10 @@
 import {
   FormItem,
-  DateInput
+  DateInput,
 
 } from '@vkontakte/vkui';
-import { useAppDispatch, useAppSelector } from '../../../../redux-store/hooks';
-import { setBookDate } from '../../../../redux-store/reducers/formStateReducer';
+import { setBookDate } from '../../../../../redux-store/reducers/formStateReducer';
+import { useAppDispatch, useAppSelector } from '../../../../../redux-store/hooks';
 
 // компонент позволяет выбрать дату и время.
 // выбор времени на мобильных устройствах может быть ограничен ввиду особенностей билиотеки компонентов VK UI
@@ -24,7 +24,6 @@ const BookingDatePicker = () => {
         onChange={(newDate: Date) => handleDateChange(newDate)}
         enableTime={true}
         disablePast={true}
-        size="m"
       />
     </FormItem>
   )

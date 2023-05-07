@@ -3,8 +3,8 @@ import {
   Textarea,
 
 } from '@vkontakte/vkui';
-import { useAppDispatch, useAppSelector } from '../../../../redux-store/hooks';
-import { setComment } from '../../../../redux-store/reducers/formStateReducer';
+import { useAppDispatch, useAppSelector } from '../../../../../redux-store/hooks';
+import { setComment } from '../../../../../redux-store/reducers/formStateReducer';
 
 // текстовое поле, в которое пользователь может писать свой комментарий
 const Comment = () => {

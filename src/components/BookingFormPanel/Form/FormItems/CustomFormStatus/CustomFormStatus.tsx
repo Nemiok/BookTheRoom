@@ -2,7 +2,7 @@ import {
   FormStatus
 } from '@vkontakte/vkui';
 import { Fragment } from 'react';
-import { useAppSelector } from '../../../../redux-store/hooks';
+import { useAppSelector } from '../../../../../redux-store/hooks';
 
 const CustomFormStatus = () => {
   const errorsList = useAppSelector(state => state.formData.errorList)

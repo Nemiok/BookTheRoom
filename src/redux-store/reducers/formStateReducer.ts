@@ -21,7 +21,7 @@ const initialState: IFormState = {
 }
 
 
-export const constructionStateSlice = createSlice({
+export const formStateSlice = createSlice({
   name: 'formData',
   initialState,
   reducers: {
@@ -54,6 +54,7 @@ export const constructionStateSlice = createSlice({
         room: '',
         date: new Date('01-01-2023'),
         comment: '',
+        errorList: []
       }
     },
 
@@ -64,6 +65,6 @@ export const constructionStateSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setBookDate, setComment, setTower, setFloor, setRoom, setAgree, clearForm, setFormStatus } = constructionStateSlice.actions
+export const { setBookDate, setComment, setTower, setFloor, setRoom, setAgree, clearForm, setFormStatus } = formStateSlice.actions
 
-export default constructionStateSlice.reducer
+export default formStateSlice.reducer
