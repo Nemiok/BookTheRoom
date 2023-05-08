@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import formStateReducer from './reducers/formStateReducer'
 import appThemeReducer from './reducers/appThemeReducer'
+import popoutStateReducer from './reducers/popoutStateReducer'
+import snackbarStateReducer from './reducers/snackbarStateReducer'
 
 const store = configureStore({
   reducer: {
     formData: formStateReducer,
-    appTheme: appThemeReducer
+    appTheme: appThemeReducer,
+    popout: popoutStateReducer,
+    snackbar: snackbarStateReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
     serializableCheck: {

@@ -1,0 +1,15 @@
+.datePicker__selectTimeWrapper {
+  display: flex;
+  justify-content: start;
+  gap: .5rem;
+  padding: 0;
+}
+
+.datePicker__selectTimeWrapper>div {
+  padding: 0;
+  flex-grow: 1;
+}
+
+.datePicker__selectTimeWrapper h5 {
+  text-align: right;
+}

@@ -18,12 +18,8 @@ import towers from '../../../utils/dataObjects/towers';
 import floors from '../../../utils/dataObjects/floors';
 import rooms from '../../../utils/dataObjects/rooms';
 
-interface IFormProps {
-  openSuccessSnackbar: () => void
-}
-
 // форма для бронирования комнат
-const Form = ({ openSuccessSnackbar }: IFormProps) => {
+const Form = () => {
   const towerSelectValue = useAppSelector(state => state.formData.tower)
   const floorSelectValue = useAppSelector(state => state.formData.floor)
   const roomSelectValue = useAppSelector(state => state.formData.room)
@@ -33,9 +29,9 @@ const Form = ({ openSuccessSnackbar }: IFormProps) => {
       <FormLayout>
         <CustomFormStatus />
 
-        <CustomSelect selectedValue={towerSelectValue} selectID={formStateNames.tower} arrayOfValuesToSelectFrom={towers} labelTop='Башня*' />
-        <CustomSelect selectedValue={floorSelectValue} selectID={formStateNames.floor} arrayOfValuesToSelectFrom={floors} labelTop='Этаж*' />
-        <CustomSelect selectedValue={roomSelectValue} selectID={formStateNames.room} arrayOfValuesToSelectFrom={rooms} labelTop='Переговорная*' />
+        <CustomSelect selectedValue={towerSelectValue} selectID={formStateNames.tower} arrayOfValuesToSelectFrom={towers} label='Башня*' />
+        <CustomSelect selectedValue={floorSelectValue} selectID={formStateNames.floor} arrayOfValuesToSelectFrom={floors} label='Этаж*' />
+        <CustomSelect selectedValue={roomSelectValue} selectID={formStateNames.room} arrayOfValuesToSelectFrom={rooms} label='Переговорная*' />
 
         <BookingDatePicker />
 
@@ -45,7 +41,7 @@ const Form = ({ openSuccessSnackbar }: IFormProps) => {
 
         <FormItem>
           <ButtonGroup mode="vertical" gap="m" style={{ width: '100%' }}>
-            <SubmitButton openSuccessSnackbar={openSuccessSnackbar} />
+            <SubmitButton />
             <ClearButton />
           </ButtonGroup>
         </FormItem>

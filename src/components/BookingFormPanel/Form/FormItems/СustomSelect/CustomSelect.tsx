@@ -5,18 +5,17 @@ import {
 } from '@vkontakte/vkui';
 import { useAppDispatch } from '../../../../../redux-store/hooks';
 import formStateNames from '../../../../../utils/nameObjects/formState';
-import { setFloor, setRoom, setTower } from '../../../../../redux-store/reducers/formStateReducer';
+import { setEndHours, setEndMinutes, setFloor, setRoom, setStartHours, setStartMinutes, setTower } from '../../../../../redux-store/reducers/formStateReducer';
 
 interface ICustomSelectProps {
-  labelTop: string,
+  label: string,
   arrayOfValuesToSelectFrom: Array<string | number>,
   selectID: string,
   selectedValue: string
 }
 
-
 // переиспользуемый компонент для выпадающего списка с переданными в него данными
-const CustomSelect = ({ arrayOfValuesToSelectFrom, labelTop, selectID, selectedValue }: ICustomSelectProps) => {
+const CustomSelect = ({ arrayOfValuesToSelectFrom, label, selectID, selectedValue }: ICustomSelectProps) => {
   const dispatch = useAppDispatch()
 
   // функция-обработчик выбора значения из выпадающего списка.
@@ -32,12 +31,24 @@ const CustomSelect = ({ arrayOfValuesToSelectFrom, labelTop, selectID, selectedV
       case formStateNames.room:
         dispatch(setRoom(value))
         break
+      case formStateNames.startTimeHours:
+        dispatch(setStartHours(value))
+        break
+      case formStateNames.startTimeMinutes:
+        dispatch(setStartMinutes(value))
+        break
+      case formStateNames.endTimeHours:
+        dispatch(setEndHours(value))
+        break
+      case formStateNames.endTimeMinutes:
+        dispatch(setEndMinutes(value))
+        break
       default: return null
     }
   }
 
   return (
-    <FormItem top={labelTop}>
+    <FormItem top={label}>
       <Select
         onChange={(e) => handleSelect(e.target.value)}
         placeholder="Не выбран"

@@ -1,12 +1,22 @@
+import { DatePickerDateFormat } from "@vkontakte/vkui";
 import { IFormState } from "../../redux-store/reducers/formStateReducer";
+import processDate from "./processDate";
 
-const validateBookingDate = (date: Date) => {
-  const dateMS = date.getTime()
-  const currDateMS = new Date().getTime()
-  if (dateMS <= currDateMS) {
-    return 'Установите время и дату позднее, чем сейчас'
-  }
+const validateBookingDate = (date: DatePickerDateFormat, endTime: { hours: string, minutes: string }, startTime: { hours: string, minutes: string }) => {
 
+  if (Object.values(date).includes(0) || Object.values(endTime).includes('') || Object.values(startTime).includes('')) return 'Выберите дату и время позднее, чем сейчас'
+
+  const startTimeHours = Number(startTime.hours)
+  const startTimeMinutes = Number(startTime.minutes)
+  const endTimeHours = Number(endTime.hours)
+  const endTimeMinutes = Number(endTime.minutes)
+
+  const { D } = processDate(`${date.month}-${date.day}-${date.year}`)
+  const currentDate = new Date();
+
+  if (currentDate > D) return 'Выберите день позднее, чем сейчас'
+
+  if (startTimeHours > endTimeHours || (startTimeHours >= endTimeHours && startTimeMinutes >= endTimeMinutes)) return 'Выберите время окончания позже времени начала'
   return ''
 }
 
@@ -25,7 +35,7 @@ const validateForm = (formData: IFormState) => {
     errorMessagesList.push('Выберите переговорную')
   }
 
-  const validatedDate = validateBookingDate(formData.date)
+  const validatedDate = validateBookingDate(formData.date, formData.endTime, formData.startTime)
   if (validatedDate.length > 0) {
     errorMessagesList.push(validatedDate)
   }
@@ -33,7 +43,6 @@ const validateForm = (formData: IFormState) => {
   if (formData.isAgree === false) {
     errorMessagesList.push('Согласитесь с условиями бронирования')
   }
-
 
   return errorMessagesList
 }

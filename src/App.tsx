@@ -11,15 +11,17 @@ import './App.css'
 import BookingFormPanel from './components/BookingFormPanel';
 import { AppearanceType } from '@vkontakte/vk-bridge';
 import { useAppSelector } from './redux-store/hooks';
+import CustomPopout from './components/BookingFormPanel/Form/CustomPopout';
 
 const App = () => {
 
   const theme = useAppSelector(state => state.appTheme)
+  const popout = useAppSelector(state => state.popout)
 
   return (
     <ConfigProvider appearance={theme as AppearanceType}>
       <AppRoot>
-        <SplitLayout header={<PanelHeader separator={false} />}>
+        <SplitLayout popout={popout ? <CustomPopout /> : null} header={<PanelHeader separator={false} />}>
           <SplitCol autoSpaced>
             <View activePanel="main">
 
