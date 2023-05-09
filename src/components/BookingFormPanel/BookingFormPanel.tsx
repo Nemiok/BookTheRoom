@@ -1,4 +1,4 @@
-import { Icon28CheckCircleOutline, Icon28Clock, Icon28ErrorCircleOutline } from "@vkontakte/icons"
+import { Icon28CheckCircleOutline, Icon28ErrorCircleOutline } from "@vkontakte/icons"
 import { Div, Panel, PanelHeader, Snackbar } from "@vkontakte/vkui"
 import ThemeButton from "../ThemeButton"
 import Form from "./Form";
@@ -16,7 +16,7 @@ const BookingFormPanel = ({ id }: IBookingFormPanelProps) => {
   return (
     <Panel id={id}>
 
-      <PanelHeader before={<Icon28Clock />}>
+      <PanelHeader>
         <Div className='header-wrapper'>
           <Div className='header-wrapper__title'>Бронирование переговорной комнаты</Div>
           <ThemeButton />

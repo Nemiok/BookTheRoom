@@ -1,7 +1,7 @@
 .datePicker__selectTimeWrapper {
   display: flex;
   justify-content: start;
-  gap: .5rem;
+  column-gap: .5rem;
   padding: 0;
 }
 
