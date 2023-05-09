@@ -7,7 +7,7 @@
 
 .datePicker__selectTimeWrapper>div {
   padding: 0;
-  flex-grow: 1;
+  width: 100%;
 }
 
 .datePicker__selectTimeWrapper h5 {
