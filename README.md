@@ -12,7 +12,7 @@
 7. кнопка "Очистить" (по нажатию очищает форму)
 
 # Технологии
-`React`, `Redux-toolkit`, `Typescript`, `HTML`, `CSS`, `Vite`, `ESlint`
+`React`, `Redux-toolkit`, `Typescript`, `VKUI`, `HTML`, `CSS`, `Vite`, `ESlint`
 
 # Запуск локально
 1. откройте терминал
